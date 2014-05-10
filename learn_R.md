@@ -30,6 +30,8 @@ data.frame(a, b, c) 数据帧，长度相同的向量的列表； 访问data.fra
 
 读取文件中的数据 csv格式： read.csv(filename) 返回一个frame对象
 
+通用读取文件的方法
+
 ``` R
 read.table(file, header = FALSE, sep = "", quote = "\"'",
            dec = ".", row.names, col.names,
