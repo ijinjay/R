@@ -9,6 +9,10 @@
 
 使用包require()/libarary()
 
+list() 列表类型，访问使用$ 或 [[]] 
+
+data.frame(a, b, c) 数据帧，长度相同的向量的列表； 访问data.frame中的元素使用[[]]双中括号，或者使用 frameName$elementName 访问, 与list不同的是会每个元素的位数相同。
+
 contour(matrix): 绘制矩阵的等高线图
 
 persp(matrix, expand = 0.2): 矩阵透视图, expand参数可选，表示z轴放大比例
@@ -26,7 +30,6 @@ legend(): 在图的某一个位置做标记对图进行说明
 ``` R
 legend("topright", c("gems", "gold", "silver"), pch=1:3)
 ```
-data.frame(a, b, c) 数据帧，长度相同的向量的列表； 访问data.frame中的元素使用[[]]双中括号，或者使用 frameName$elementName 访问
 
 读取文件中的数据 csv格式： read.csv(filename) 返回一个frame对象
 
