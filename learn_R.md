@@ -11,8 +11,18 @@
 
 list() 列表类型，访问使用$ 或 [[]] 
 
-data.frame(a, b, c) 数据帧，长度相同的向量的列表； 访问data.frame中的元素使用[[]]双中括号，或者使用 frameName$elementName 访问, 与list不同的是会每个元素的位数相同。
+data.frame(a, b, c) 数据帧，长度相同的向量的列表； 访问data.frame中的元素使用[[]]双中括号，或者使用 frameName$elementName 访问, 与list不同的是data.frame 是一种类似数据库存储的结构，每一行代表一个数据项。
 
+new.env(hash = TRUE, parent = parent.frame(), size = 29L) environment 与 list 的区别主要在两个方面：
+
+> environment只能通过子变量名来访问（使用operator $ or [[），它的子变量没有排序，所以不能通过id来访问。
+> environment在做为参数传入程序时，并不进行拷贝，而是传递一个地址。这就意味着我们在编写程序时可以使用environment来实现以形参的形式来对数据进行修改。
+
+``` R
+f <- function();
+enviroment(f);
+mget(c(...), envir = env, ifnotfound=NA);# 获取所有的环境值
+```
 contour(matrix): 绘制矩阵的等高线图
 
 persp(matrix, expand = 0.2): 矩阵透视图, expand参数可选，表示z轴放大比例
